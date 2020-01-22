@@ -185,5 +185,5 @@ public class Review {
          sentWord = sentWord.substring(firstWord.length()+1, sentWord.length());                                        
       }
      }
-   }        
+   }
 }
