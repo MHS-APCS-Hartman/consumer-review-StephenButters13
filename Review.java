@@ -165,7 +165,8 @@ public class Review {
       return randomNegativeAdj();
     }
   }
-    public static double totalSentiment(String fileName)
+  
+  public static double totalSentiment(String fileName)
   {
     String sentWord = textToString(fileName);
     double totalSent = 0;
