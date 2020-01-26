@@ -201,7 +201,7 @@ public class Review {
     }
     else if(sent < 2)
     {
-      rating = 3
+      rating = 3;
     }
     else if(sent < 4)
     {
@@ -212,5 +212,30 @@ public class Review {
       rating = 5;
     }
     return rating;
+  }
+  
+  public static String fakeReview(String fileName)
+  {
+    String stringFile = textToString(fileName);
+    String fakeRev = "";
+    boolean hasAsterisk = false;
+    
+    for(int i = 0; i < stringFile.length(); i++)
+    {
+      if(stringFile.substring(i, i + 1).equals("*"))
+      {
+        hasAsterisk = true;
+      }
+      else if(stringFile.substring(i, i +1).equals(" ") && hasAsterisk)
+      {
+        fakeRev += randomAdjective() + " ";
+        hasAsterisk = false;
+      }
+      else if(hasAsterisk == false)
+      {
+        fakeRev += stringFile.substring(i, i + 1);
+      }
+    }
+    return fakeRev;
   }
 }
