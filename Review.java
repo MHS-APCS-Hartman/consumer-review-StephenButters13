@@ -186,4 +186,31 @@ public class Review {
       }
      }
    }
+  
+  public static int starRating(String fileName)
+  {
+    double sent = totalSent(filename);
+    int rating;
+    if(sent < -2)
+    {
+      rating = 1;
+    }
+    else if(sent < 0)
+    {
+      rating = 2;
+    }
+    else if(sent < 2)
+    {
+      rating = 3
+    }
+    else if(sent < 4)
+    {
+      rating = 4;
+    }
+    else
+    {
+      rating = 5;
+    }
+    return rating;
+  }
 }
