@@ -238,4 +238,54 @@ public class Review {
     }
     return fakeRev;
   }
+  
+  public static String fakeReviewStronger(String fileName)
+  {
+    String stringFile = textToString(fileName);
+    String fakeRevS = "";
+    String adjective = "";
+    String newAdjective = "";
+    boolean hasAsterisk = false;
+    
+    for(int i = 0; i < stringFile.length(); i++)
+    {
+      if(stringFile.substring(i, i + 1).equals("*"))
+      {
+        hasAsterisk = true;
+      }
+      
+      else if(stringFile.substring(i, i + 1).equals(" ") && hasAsterisk)
+      {
+        adjective = removePunctuation(adjective);
+        
+        while(true)
+        {
+            newAdjective = randomAdjective();
+          
+            if((sentimentVal(adjective) > 0) && (sentimentVal(newAdjective) > sentimentVal(adjective)))
+            {
+              break;
+            }
+            else if((sentimentVal(adjective) < 0) && (sentimentVal(newAdjective) < sentimentVal(adjective)))
+            {
+              break;
+            }
+            else if(sentimentVal(adjective) == 0)
+            {
+              break;
+            }
+         }
+          
+       else if(hasAsterisk == true)
+       {
+            adjective += stringFile.substring(i, i + 1)
+       }
+       else if(hasAsterisk == false)
+       {
+         fakeRevS += stringFile.substring(i, i + 1)
+       }
+        return fakeRevS;
+       }
+      }
+    }
 }
