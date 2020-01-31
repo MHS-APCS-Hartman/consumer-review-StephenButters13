@@ -280,7 +280,7 @@ public class Review {
        {
             adjective += stringFile.substring(i, i + 1);
        }
-       else if(hasAsterisk == false)
+       else
        {
          fakeRevS += stringFile.substring(i, i + 1);
        }
