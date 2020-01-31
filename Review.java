@@ -171,7 +171,7 @@ public class Review {
     String sentWord = textToString(fileName);
     double totalSent = 0;
     
-    while(sentWord.length > 0)
+    while(sentWord.length() > 0)
     {
       if(sentWord.indexOf(" ") == -1)
       {
@@ -185,11 +185,12 @@ public class Review {
          sentWord = sentWord.substring(firstWord.length()+1, sentWord.length());                                        
       }
      }
+     return totalSent;
    }
   
   public static int starRating(String fileName)
   {
-    double sent = totalSent(filename);
+    double sent = totalSentiment(fileName);
     int rating;
     if(sent < -2)
     {
@@ -275,7 +276,7 @@ public class Review {
               break;
             }
          }
-          
+       }    
        else if(hasAsterisk == true)
        {
             adjective += stringFile.substring(i, i + 1);
@@ -284,8 +285,9 @@ public class Review {
        {
          fakeRevS += stringFile.substring(i, i + 1);
        }
-        return fakeRevS;
-       }
+        
       }
-    }
-}
+      return fakeRevS;
+     }
+   }
+  
