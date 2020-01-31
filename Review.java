@@ -278,11 +278,11 @@ public class Review {
           
        else if(hasAsterisk == true)
        {
-            adjective += stringFile.substring(i, i + 1)
+            adjective += stringFile.substring(i, i + 1);
        }
        else if(hasAsterisk == false)
        {
-         fakeRevS += stringFile.substring(i, i + 1)
+         fakeRevS += stringFile.substring(i, i + 1);
        }
         return fakeRevS;
        }
